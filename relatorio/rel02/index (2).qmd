@@ -1,6 +1,6 @@
 ---
 # Só mude aqui!!!!
-author: "NIcolas"
+author: "Nicolas"
 title: "Relatório do curso R Básico 2024"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
