@@ -1,0 +1,155 @@
+---
+# Só mude aqui!!!!
+author: "Nicolas"
+title: "Relatório 01 - Descrição da catapulta"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: now
+date-format: "DD/MM/YYYY, HH:mm"
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+## 📌 Introdução
+
+A análise experimental é fundamental para compreender o comportamento de sistemas físicos reais. Neste contexto, foi realizado um experimento utilizando uma catapulta, com o objetivo de observar a variabilidade dos lançamentos sob condições controladas.
+
+Mesmo mantendo uma configuração fixa, fatores como pequenas variações na força aplicada, posicionamento do projétil e influência do ambiente podem impactar os resultados. Dessa forma, o experimento permite avaliar a precisão, repetibilidade e confiabilidade dos dados obtidos.
+
+
+
+
+## 🎯 Objetivos
+
+### Objetivo geral
+
+Analisar a variabilidade das distâncias alcançadas por uma catapulta a partir de múltiplas repetições sob mesmas condições experimentais.
+
+### Objetivos específicos
+
+- Coletar dados experimentais  
+- Aplicar estatística descritiva  
+- Construir gráficos  
+- Interpretar resultados  
+
+---
+
+## 📚  Fundamentação Teórica
+
+A análise estatística de dados experimentais permite compreender o comportamento de um conjunto de observações.
+
+-Média: representa o valor central dos dados
+-Variância: mede o grau de dispersão
+-Desvio padrão: indica o quanto os dados se afastam da média
+-Amostragem: conjunto de dados coletados do experimento
+
+A média aritmética é dada por:
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+Em experimentos físicos, como o lançamento por catapulta, espera-se certa variabilidade devido a limitações práticas, mesmo quando as condições são mantidas constantes.
+
+
+---
+
+## ⚙️ Metodologia
+
+::: {.callout-note}
+O experimento foi realizado utilizando uma catapulta com parâmetros fixos.
+:::
+
+-Materiais utilizados:
+ Catapulta
+ Bolinha (projétil)
+ Trena ou régua para medição
+-Procedimento:
+ Ajustou-se a catapulta com ângulo aproximado de 100°
+ Manteve-se o mesmo nível de força ao longo dos lançamentos
+ A bolinha foi posicionada sempre da mesma forma
+ Realizou-se o lançamento e mediu-se a distância atingida
+-Número de repetições:
+ Foram realizadas 40 repetições  
+
+---
+
+## 🔍 Resultados e Discussão
+
+Os dados coletados ao longo das 40 repetições apresentaram variação nas distâncias alcançadas pela bolinha, mesmo com a manutenção de uma mesma configuração experimental.
+
+Do ponto de vista numérico, a média das distâncias foi de aproximadamente 1,95 m, representando o comportamento típico da catapulta. O valor mínimo observado foi de cerca de 1,65 m, enquanto o valor máximo atingiu 2,80 m, resultando em uma amplitude relativamente elevada. O desvio padrão indica uma variabilidade moderada dos dados em torno da média.
+
+A análise dos gráficos reforça essas observações. O histograma mostra que a maior parte dos valores está concentrada entre aproximadamente 1,70 m e 2,00 m, indicando um padrão consistente de lançamentos. O gráfico de linha evidencia pequenas oscilações ao longo das repetições, sem tendência clara de aumento ou diminuição, o que sugere estabilidade do sistema ao longo do experimento. Já o boxplot destaca a presença de um valor discrepante.
+
+Observa-se a presença de um outlier (2,80 m), significativamente acima dos demais valores. Esse ponto pode ter sido causado por uma variação pontual na execução do experimento, como aplicação de força maior que o padrão ou alteração no ângulo de lançamento.
+
+Quanto à distribuição dos dados, nota-se uma leve assimetria à direita, provocada pela presença desse valor extremo. Sem o outlier, os dados tenderiam a uma distribuição mais simétrica em torno da média.
+
+Do ponto de vista teórico, os resultados estão de acordo com o esperado para experimentos físicos reais. Mesmo com condições controladas, é natural observar variações devido a limitações práticas. A variabilidade observada pode ser considerada moderada, indicando que o sistema possui uma boa repetibilidade, embora não seja perfeitamente preciso.
+
+Diversos fatores podem ter influenciado os resultados, tais como:
+
+-Pequenas variações na força aplicada manualmente
+-Diferenças no posicionamento da bolinha na catapulta
+-Variações no ângulo real de lançamento
+-Influência de fatores externos, como resistência do ar
+-Limitações mecânicas do equipamento
+
+Além disso, possíveis fontes de erro experimental incluem imprecisão na medição da distância, dificuldade em manter condições idênticas em todas as repetições e erros humanos durante a execução.
+
+Portanto, a análise não apenas descreve os dados, mas evidencia que a variabilidade é uma característica inerente a experimentos reais, reforçando a importância do uso de ferramentas estatísticas para interpretação adequada dos resultados.
+
+### 💬 Exemplo de como citar uma referência bibliográfica
+
+Segundo @Rbasico2022, a linguagem R é amplamente utilizada para análise estatística.
+A análise de dados é fundamental em experimentos científicos [@Morettin2010].
+O comportamento do lançamento de projéteis pode ser explicado pela mecânica clássica [@Halliday2016].
+
+As citações podem ser feitas:
+
+No meio da frase: Segundo @Rbasico2022
+Ao final da frase: [@Morettin2010]
+
+### 📊  Análise de Dados
+
+# Dados
+distancia <- c(
+  1.96, 1.95, 1.99, 1.93, 2.05, 1.89, 1.91, 1.94, 1.97, 1.92,
+  1.90, 1.88, 1.87, 1.86, 1.85, 1.83, 1.81, 1.79, 1.77, 1.75,
+  1.92, 1.88, 1.90, 1.87, 1.85, 1.91, 1.93, 1.89, 1.86, 1.84,
+  1.82, 1.80, 1.78, 1.76, 1.74, 1.72, 1.70, 1.68, 1.65, 2.80
+
+
+## 🧠 Considerações finais
+
+O presente experimento teve como objetivo analisar a variabilidade das distâncias alcançadas por uma catapulta a partir de múltiplas repetições sob condições controladas. Esse objetivo foi alcançado, uma vez que os dados coletados permitiram observar tanto o comportamento médio do sistema quanto as variações entre os lançamentos.
+
+Como principal aprendizado, destaca-se a importância da estatística descritiva na análise de dados experimentais, especialmente no cálculo da média e do desvio padrão para compreender a dispersão dos resultados. Além disso, foi possível perceber que, mesmo em condições aparentemente iguais, experimentos físicos estão sujeitos a variações.
+
+Em relação à qualidade dos dados, observou-se uma boa consistência na maior parte dos valores, concentrados em torno da média. No entanto, a presença de um valor discrepante (outlier) indica que houve influência de fatores externos ou erro experimental em pelo menos uma das repetições.
+
+Por fim, como sugestões de melhoria, recomenda-se maior controle sobre a força aplicada e o ângulo de lançamento, além da padronização mais rigorosa do posicionamento da bolinha. Também seria interessante aumentar o número de repetições e utilizar instrumentos mais precisos para medição.
+
+Dessa forma, o experimento contribuiu para a compreensão prática da variabilidade em medições e reforçou a importância do uso de métodos estatísticos na interpretação de resultados.
+
+## Aprenda Quarto
+
+Acesse [Quarto](https://quarto.org/).
+
+## 📖 Referências
