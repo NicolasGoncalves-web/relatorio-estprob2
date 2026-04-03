@@ -8,8 +8,8 @@ link-citations: true
 csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
 subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
 include-before-body: header.html
-date: now
-date-format: "DD/MM/YYYY, HH:mm"
+date: 30/03/2026
+date-format: "30/03/2026, 23:20"
 lang: pt-BR
 format:
   html:
@@ -51,39 +51,31 @@ Analisar a variabilidade das distâncias alcançadas por uma catapulta a partir 
 ---
 
 ## 📚  Fundamentação Teórica
+A fundamentação teórica deste trabalho está centrada nos conceitos básicos da estatística descritiva, aplicada à análise de dados experimentais. A estatística fornece ferramentas para resumir e interpretar informações coletadas, permitindo identificar padrões e avaliar a variabilidade dos resultados.
 
-A análise estatística de dados experimentais permite compreender o comportamento de um conjunto de observações.
+A média aritmética representa o valor central dos dados, enquanto a variância e o desvio padrão indicam o grau de dispersão em torno da média. Esses indicadores são fundamentais para compreender a precisão e a repetibilidade de experimentos.
 
--Média: representa o valor central dos dados
--Variância: mede o grau de dispersão
--Desvio padrão: indica o quanto os dados se afastam da média
--Amostragem: conjunto de dados coletados do experimento
+No caso da catapulta, cada lançamento corresponde a uma observação amostral, e o conjunto das distâncias obtidas forma uma amostra que pode ser analisada estatisticamente. Mesmo em condições controladas, é esperado que haja variabilidade natural nos resultados, causada por fatores mecânicos, ambientais ou erros de execução.
 
-A média aritmética é dada por:
-
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
-Em experimentos físicos, como o lançamento por catapulta, espera-se certa variabilidade devido a limitações práticas, mesmo quando as condições são mantidas constantes.
-
-
----
+Assim, a estatística se torna indispensável para transformar os dados coletados em conhecimento confiável, permitindo avaliar tanto o comportamento típico do sistema quanto suas variações.
 
 ## ⚙️ Metodologia
 
-::: {.callout-note}
+
 O experimento foi realizado utilizando uma catapulta com parâmetros fixos.
-:::
+
 
 -Materiais utilizados:
  Catapulta
  Bolinha (projétil)
  Trena ou régua para medição
+ 
 -Procedimento:
  Ajustou-se a catapulta com ângulo aproximado de 100°
  Manteve-se o mesmo nível de força ao longo dos lançamentos
  A bolinha foi posicionada sempre da mesma forma
  Realizou-se o lançamento e mediu-se a distância atingida
+ 
 -Número de repetições:
  Foram realizadas 40 repetições  
 
@@ -133,11 +125,22 @@ Ao final da frase: [@Morettin2010]
 ```{r}
 #| echo: true
 
+# Vetor fornecido
 distancia <- c(
   1.96, 1.95, 1.99, 1.93, 2.05, 1.89, 1.91, 1.94, 1.97, 1.92,
   1.90, 1.88, 1.87, 1.86, 1.85, 1.83, 1.81, 1.79, 1.77, 1.75,
   1.92, 1.88, 1.90, 1.87, 1.85, 1.91, 1.93, 1.89, 1.86, 1.84,
-  1.82, 1.80, 1.78, 1.76, 1.74, 1.72, 1.70, 1.68, 1.65, 2.80); distancia
+  1.82, 1.80, 1.78, 1.76, 1.74, 1.72, 1.70, 1.68, 1.65, 2.80
+)
+
+# Criando a tabela
+tabela <- data.frame(
+  Repetiçoes = 1:length(distancia),
+  Distancia = distancia
+)
+
+# Exibindo a tabela formatada no relatório
+knitr::kable(tabela, caption = "Tabela de valores do vetor distancia")
 
 ```
 

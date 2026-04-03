@@ -8,8 +8,8 @@ link-citations: true
 csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
 subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
 include-before-body: header.html
-date: now
-date-format: "30/03/2026, HH:mm"
+date: 03/04/2026
+date-format: "03/04/2026, 13:08"
 lang: pt-BR
 format:
   html:
@@ -28,9 +28,17 @@ execute:
 
 ## 📌 Introdução
 
-A linguagem R é amplamente utilizada para análise estatística, manipulação de dados e construção de gráficos, sendo uma ferramenta essencial em diversas áreas acadêmicas e profissionais.
+O curso R Básico – Estudando o Ambiente R foi concebido com o propósito de oferecer aos estudantes e participantes uma formação inicial sólida na linguagem R, ferramenta amplamente utilizada em estatística, ciência de dados e áreas correlatas. Promovido pela Universidade Federal de São João del-Rei (UFSJ), Campus Alto Paraopeba (CAP), em Ouro Branco/MG, e organizado pelo Clube de Engenharia Assistida por Computador (CEAC/CAP/UFSJ), o curso foi ministrado pelo professor Ben Dêivide, do Departamento de Estatística, Física e Matemática (DEFIM).
 
-A presente prática tem como objetivo introduzir os conceitos básicos do R, com base nas aulas iniciais do curso R Básico 2024, abordando desde sua instalação até a utilização de comandos, criação de objetos e organização de scripts.
+A proposta pedagógica do curso foi estruturada para atender tanto iniciantes quanto aqueles que já possuem algum contato com programação, mas desejam compreender de forma sistemática os fundamentos do R. A linguagem R, criada nos anos 1990, consolidou-se como uma das principais ferramentas para análise estatística e científica, e sua popularidade se deve à flexibilidade, ao vasto ecossistema de pacotes e à comunidade ativa que a sustenta. Nesse contexto, o curso buscou não apenas ensinar comandos e técnicas, mas também apresentar a filosofia que fundamenta o R, seus princípios e sua evolução histórica.
+
+A metodologia adotada foi baseada em aulas expositivas transmitidas pelo YouTube, utilizando recursos como mesa digital, demonstrações práticas no ambiente R e na IDE RStudio, além de momentos de interação com os alunos por meio de perguntas e respostas. Essa abordagem garantiu acessibilidade, permitindo que os participantes acompanhassem as aulas de forma remota e flexível, ao mesmo tempo em que favoreceu a prática imediata dos conceitos apresentados.
+
+Cada aula foi cuidadosamente planejada para combinar teoria e prática, com leituras complementares extraídas do livro R básico de Batista e Oliveira (2022), referência principal do curso. O conteúdo foi organizado de forma progressiva: iniciando com a apresentação geral e os princípios fundamentais da linguagem, passando pela instalação e interfaces, explorando sua história e funcionamento, até chegar a aspectos práticos como comandos, arquivos, scripts e estruturas de dados.
+
+O curso também se destacou pela preocupação em contextualizar o aprendizado. Ao apresentar a história do R e sua relação com a linguagem S, por exemplo, os alunos puderam compreender a relevância da ferramenta no cenário científico. Ao discutir objetos e estruturas de dados, foi possível relacionar conceitos abstratos com aplicações práticas, aproximando o estudante da realidade de quem utiliza o R em pesquisas e análises.
+
+Assim, o curso R Básico – Estudando o Ambiente R não se limitou a transmitir conhecimento técnico, mas buscou formar uma base conceitual sólida, estimular a prática e promover a autonomia dos participantes no uso da linguagem. Essa combinação de teoria, prática e interação caracterizou a metodologia adotada e garantiu que os objetivos fossem alcançados de maneira eficaz e acessível
 
 
 
@@ -38,78 +46,67 @@ A presente prática tem como objetivo introduzir os conceitos básicos do R, com
 
 ### Objetivo geral
 
-Compreender os conceitos iniciais da linguagem R e sua aplicação no ambiente de programação.
+O objetivo geral do curso R Básico – Estudando o Ambiente R é oferecer uma formação inicial completa e estruturada na linguagem R, permitindo que os participantes compreendam tanto os fundamentos teóricos quanto as aplicações práticas dessa ferramenta. O curso busca desenvolver no aluno a capacidade de reconhecer a lógica que sustenta o R, entendendo seus princípios fundamentais — objeto, função e interface — e aplicando-os em situações reais de programação e análise de dados. Além disso, pretende-se capacitar os estudantes para utilizar o ambiente R e a IDE RStudio de forma eficiente, explorando suas interfaces, comandos e recursos, de modo a manipular dados, criar scripts e organizar o fluxo de trabalho com autonomia.
+
+Esse objetivo também envolve contextualizar historicamente a linguagem, mostrando sua origem, evolução e relevância no cenário científico e estatístico, para que o aluno compreenda não apenas como utilizar o R, mas também por que ele se tornou uma ferramenta tão importante. O curso busca, portanto, integrar teoria e prática, incentivando a reflexão crítica, o estudo complementar e a prática independente, preparando os participantes para avançar em níveis mais complexos de análise, pesquisa e aplicação em ciência de dados, estatística e áreas afins.
 
 ### Objetivos específicos
 
-- Entender o funcionamento do R e do RStudio
--Executar comandos básicos
--Criar e manipular objetos
--Conhecer estruturas de dados
--Organizar scripts de programação
+Os objetivos específicos do curso R Básico – Estudando o Ambiente R podem ser descritos de forma detalhada e corrida, sem tópicos, para dar mais fluidez ao relatório.
 
----
+O curso tem como objetivos específicos introduzir os participantes ao ambiente R e à IDE RStudio, permitindo que se familiarizem com suas interfaces, recursos e funcionalidades, de modo a compreender como essas ferramentas se articulam no processo de programação estatística. Busca também explicar de forma clara os princípios fundamentais da linguagem R — objeto, função e interface — demonstrando como eles se aplicam na prática e estruturam o funcionamento da linguagem. Outro objetivo é contextualizar historicamente o R, abordando sua origem, evolução, os criadores e a importância da linguagem S, além de destacar o papel do R Core Team e do CRAN na manutenção e expansão da linguagem.
+
+Além disso, o curso pretende ensinar comandos básicos e o funcionamento do console, incluindo expressões, atribuições, nomes sintáticos e não sintáticos, e o conceito de ambiente global, para que os alunos possam compreender como o R organiza e armazena objetos durante uma sessão. Também busca demonstrar a criação e organização de scripts, ensinando como salvar, executar e organizar arquivos, incluindo a definição de diretórios de trabalho, o que é essencial para manter a organização e a continuidade das análises.
+
+Outro objetivo específico é apresentar os arquivos de histórico e armazenamento (.RData e .Rhistory), mostrando como criar, salvar e utilizar esses registros para manter o histórico de trabalho e facilitar a retomada de projetos. O curso ainda se propõe a explorar objetos e estruturas de dados, explicando atributos, classes e metadados, além de apresentar os principais tipos de estruturas em R, como vetores, listas e data frames, permitindo que os alunos compreendam a lógica interna da linguagem e sua aplicação prática.
+
+Por fim, o curso busca promover a prática aplicada, utilizando exemplos ilustrativos e exercícios práticos durante as aulas para reforçar o aprendizado teórico, estimular a autonomia dos participantes por meio do estudo complementar no livro referência e da exploração prática do ambiente R fora das aulas, e favorecer a interação e participação ativa, criando momentos de perguntas e respostas e promovendo um ambiente colaborativo e dinâmico.
+
 
 ## 📚  Fundamentação Teórica
+A fundamentação teórica do curso R Básico – Estudando o Ambiente R está alicerçada em três pilares principais: a compreensão da linguagem R como ferramenta estatística e computacional, a contextualização histórica de seu desenvolvimento e a aplicação prática por meio de metodologias de ensino que integram teoria e prática.
 
-A linguagem R é baseada no conceito de que tudo é um objeto, permitindo que dados e resultados sejam armazenados e manipulados de forma eficiente.
+A linguagem R surgiu nos anos 1990, criada por Robert Gentleman e Ross Ihaka, inspirada na linguagem S. Desde então, consolidou-se como uma das principais ferramentas para análise estatística e científica, devido à sua flexibilidade, ao vasto ecossistema de pacotes e à comunidade ativa que a sustenta. O R Core Team e o CRAN (Comprehensive R Archive Network) desempenham papel fundamental na manutenção e expansão da linguagem, garantindo sua evolução contínua e relevância no cenário acadêmico e profissional.
 
-Entre os principais conceitos estatísticos utilizados no R, destacam-se:
+Do ponto de vista conceitual, o R se estrutura em torno de três princípios fundamentais: objeto, função e interface. O princípio do objeto estabelece que tudo em R é tratado como objeto, o que confere consistência e organização ao ambiente. O princípio da função determina que as operações são realizadas por funções, permitindo modularidade e reutilização de código. Já o princípio da interface refere-se à interação entre o usuário e o sistema, seja por meio do console, scripts ou IDEs como o RStudio. Esses princípios constituem a base teórica que orienta o aprendizado e a prática da linguagem.
 
--Média: representa o valor central de um conjunto de dados
--Variância: mede a dispersão dos dados
--Desvio padrão: indica o grau de variação em relação à média
--Amostragem: seleção de dados para análise
+A fundamentação teórica também contempla a importância da programação estatística como recurso essencial para a ciência de dados, a pesquisa acadêmica e a prática profissional. O R, por ser uma linguagem voltada para análise estatística, oferece recursos que permitem desde operações simples até análises complexas, integrando estatística, matemática e computação em um único ambiente.
 
-A média aritmética é dada por:
+No âmbito pedagógico, o curso se apoia em metodologias que combinam aulas expositivas, demonstrações práticas e leituras complementares. O livro R básico de Batista e Oliveira (2022) é utilizado como referência principal, fornecendo suporte teórico e prático para os conteúdos abordados. A transmissão das aulas pelo YouTube, com uso de mesa digital e demonstrações no R e RStudio, garante acessibilidade e favorece a interação entre professor e alunos.
 
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
-Além disso, o R utiliza estruturas como vetores, listas e data frames para organizar informações, facilitando análises estatísticas e geração de gráficos.
-
----
+Assim, a fundamentação teórica do curso não se limita à apresentação de conceitos técnicos, mas busca integrar história, princípios conceituais e prática aplicada, formando uma base sólida para que os participantes compreendam a linguagem R em sua totalidade e desenvolvam autonomia para utilizá-la em diferentes contextos acadêmicos e profissionais.
 
 ## ⚙️ Metodologia
+A prática realizada no curso R Básico – Estudando o Ambiente R seguiu uma metodologia essencialmente computacional e aplicada, utilizando o software R e o ambiente RStudio como ferramentas principais de ensino e aprendizagem.
 
-::: {.callout-note}
-A prática foi realizada utilizando o software R e o ambiente RStudio.
-:::
+O professor conduziu as atividades de forma expositiva e demonstrativa, transmitidas pelo YouTube, com uso de mesa digital para esquematizar conceitos e reforçar a compreensão teórica. Em paralelo, os alunos acompanharam a execução prática dos comandos diretamente no console do R e na IDE RStudio, o que permitiu visualizar em tempo real a aplicação dos conteúdos.
 
-- Instalação do R e RStudio
--Execução de comandos no console
--Criação de scripts (.R)
--Manipulação de objetos e vetores
--Testes de funções básicas
+As etapas metodológicas contemplaram:
 
-Não houve experimento físico, sendo uma prática computacional baseada em simulação e execução de códigos.  
+-Instalação do R e do RStudio, garantindo que todos os participantes tivessem acesso ao ambiente de trabalho adequado.
 
----
+-Execução de comandos no console, para introduzir a lógica da linguagem e familiarizar os alunos com a interação básica.
+
+-Criação de scripts (.R), mostrando como organizar e salvar códigos para reutilização e continuidade das análises.
+
+-Manipulação de objetos e vetores, exemplificando como o R estrutura e armazena dados.
+
+-Testes de funções básicas, permitindo que os alunos experimentassem operações simples e compreendessem a lógica funcional da linguagem.
+
+É importante destacar que não houve experimentos físicos ou laboratoriais. Toda a prática foi baseada em simulação computacional e execução de códigos, o que reforça o caráter aplicado e digital da metodologia. Essa abordagem garantiu que os alunos desenvolvessem habilidades práticas diretamente relacionadas ao uso da linguagem R, ao mesmo tempo em que consolidavam os conceitos teóricos apresentados.
 
 ## 🔍 Resultados e Discussão
-A partir dos dados coletados, foi possível calcular medidas estatísticas descritivas, como média e desvio padrão. A média dos valores obtidos foi aproximadamente 10,13, indicando que os dados estão concentrados próximos desse valor central. O desvio padrão foi relativamente baixo, o que demonstra baixa variabilidade entre os dados coletados.
+Os resultados obtidos ao longo do curso R Básico – Estudando o Ambiente R refletem diretamente a metodologia aplicada e a proposta pedagógica de integrar teoria e prática. A prática computacional, realizada exclusivamente no ambiente R e RStudio, permitiu que os participantes desenvolvessem habilidades essenciais de programação estatística, sem a necessidade de experimentos físicos, mas com foco em simulação e execução de códigos.
 
-Em relação ao comportamento dos dados, observa-se que os valores se distribuem de forma bastante homogênea, sem grandes oscilações. Em uma representação gráfica (como um gráfico de dispersão ou histograma), os pontos tenderiam a se concentrar próximos à média, sem dispersão significativa.
+Entre os principais resultados alcançados, destaca-se a instalação e configuração bem-sucedida do R e do RStudio, garantindo que todos os alunos pudessem acompanhar as atividades em seus próprios computadores. A execução de comandos básicos no console possibilitou a familiarização com a lógica da linguagem, enquanto a criação de scripts (.R) promoveu a organização e reutilização dos códigos, favorecendo a continuidade das análises.
 
-Não foi identificada a presença de valores discrepantes (outliers), uma vez que todos os dados estão dentro de um intervalo próximo e coerente. Isso indica consistência nas medições realizadas.
+A manipulação de objetos e vetores demonstrou na prática como o R estrutura e armazena dados, permitindo que os alunos compreendessem de forma aplicada os princípios fundamentais da linguagem. Os testes de funções básicas, por sua vez, reforçaram a ideia de que em R todas as operações são realizadas por funções, consolidando o aprendizado teórico com exemplos práticos.
 
-Quanto à distribuição, os dados apresentam uma tendência aproximadamente simétrica, sem evidência clara de assimetria (tendência para valores mais altos ou mais baixos). Isso reforça a ideia de que o conjunto de dados é estável e bem comportado.
+Na discussão dos resultados, observa-se que a metodologia baseada em prática computacional foi eficaz para atingir os objetivos do curso. A ausência de experimentos físicos não representou uma limitação, já que o foco estava na simulação e execução de códigos, o que é condizente com a natureza da linguagem R. Essa abordagem permitiu que os alunos desenvolvessem autonomia, reproduzissem os exemplos apresentados e explorassem novas possibilidades de aplicação.
 
-Do ponto de vista teórico, os resultados estão de acordo com o esperado, considerando um experimento controlado. A baixa variabilidade indica que o processo de coleta de dados foi relativamente preciso e confiável.
+Outro ponto relevante é que a progressão gradual dos conteúdos — da instalação e comandos básicos até a manipulação de objetos e estruturas de dados — favoreceu a construção de conhecimento de forma contínua e estruturada. Os alunos puderam perceber a evolução de suas habilidades ao longo das aulas, passando de tarefas simples para operações mais complexas, sempre com suporte teórico e prático.
 
-A pequena variação observada pode estar relacionada a fatores como:
-
--imprecisão nos instrumentos de medição
--pequenas variações nas condições do experimento
--erros de arredondamento
-
-Como possíveis fontes de erro experimental, destacam-se:
-
--erro humano durante a coleta dos dados
--limitações dos instrumentos utilizados
--condições externas não controladas
-
-De modo geral, os resultados indicam boa qualidade dos dados e coerência com os conceitos estatísticos aplicados, evidenciando a eficácia do uso do R para análise de dados.
+Em síntese, os resultados confirmam que o curso cumpriu seu papel de introduzir a linguagem R de maneira acessível e prática, enquanto a discussão evidencia que a metodologia adotada foi adequada para consolidar os conceitos e estimular a autonomia dos participantes.
 
 ### 💬 Exemplo de como citar uma referência bibliográfica
 
@@ -121,16 +118,13 @@ Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
 
 ## 🧠 Considerações finais
 
-A prática teve como objetivo compreender os conceitos iniciais da linguagem R e sua aplicação na análise de dados, sendo possível afirmar que esse objetivo foi plenamente alcançado. Ao longo da atividade, foi possível explorar o ambiente do R e do RStudio, executar comandos básicos e aplicar funções estatísticas simples.
+O curso R Básico – Estudando o Ambiente R cumpriu plenamente sua proposta de introduzir os participantes à linguagem R de forma estruturada, acessível e prática. A metodologia adotada, baseada em aulas expositivas transmitidas pelo YouTube, demonstrações em tempo real no R e RStudio, uso de mesa digital e leituras complementares, mostrou-se eficaz para integrar teoria e prática, favorecendo a compreensão dos conceitos fundamentais e sua aplicação imediata.
 
-Entre os principais aprendizados, destacam-se a criação e manipulação de objetos, o uso de vetores e a aplicação de medidas estatísticas, como média e desvio padrão. Além disso, a prática contribuiu para o desenvolvimento do raciocínio lógico e da interpretação de dados.
+Os resultados evidenciam que os alunos foram capazes de instalar e configurar o ambiente, executar comandos básicos, criar scripts, manipular objetos e vetores, além de testar funções essenciais da linguagem. Essa progressão gradual permitiu que o aprendizado fosse construído de forma contínua, sem lacunas conceituais, e estimulou a autonomia dos participantes para explorar o R fora das aulas.
 
-Em relação à qualidade dos dados coletados, observa-se que apresentam boa consistência, com baixa variabilidade e ausência de valores discrepantes, o que indica confiabilidade nas informações analisadas.
+A ausência de experimentos físicos não representou uma limitação, já que o foco do curso foi a prática computacional, condizente com a natureza da linguagem R. Essa abordagem possibilitou simulações e execuções de códigos que reforçaram a lógica interna da linguagem e prepararam os alunos para análises mais complexas.
 
-Como sugestão de melhoria, recomenda-se a utilização de conjuntos de dados maiores e mais variados, além da inclusão de representações gráficas para uma análise mais completa. Também seria interessante explorar funções mais avançadas do R para aprofundar o conhecimento.
-
-De forma geral, a prática demonstrou a importância do R como ferramenta para análise de dados, evidenciando seu potencial tanto no meio acadêmico quanto profissional.
-
+Em síntese, o curso proporcionou uma formação inicial consistente, que não apenas introduziu os fundamentos da linguagem R, mas também incentivou a prática aplicada e o estudo complementar. As considerações finais apontam que os objetivos foram atingidos, a metodologia foi adequada e os resultados confirmam a relevância do curso para a formação acadêmica e profissional dos participantes, especialmente em áreas que demandam análise estatística e ciência de dados.
 ## Aprenda Quarto
 
 Acesse [Quarto](https://quarto.org/).
