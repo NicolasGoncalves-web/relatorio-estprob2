@@ -1,0 +1,285 @@
+---
+author: "Nicolas"
+title: "Aproximação das Distribuições Binomial e Poisson à Normal"
+bibliography: referencias.bib
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: today
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## 📌 Introdução
+
+- O estudo das distribuições de probabilidade é um dos pilares da estatística, pois permite modelar fenômenos aleatórios e compreender a variabilidade natural dos dados. Entre as distribuições mais utilizadas estão a **Binomial**, a **Poisson** e a **Normal**, cada uma com aplicações específicas em diferentes áreas do conhecimento.  
+
+- A **Distribuição Binomial** é aplicada em situações de experimentos com número fixo de tentativas e probabilidade constante de sucesso. Já a **Distribuição de Poisson** é utilizada para modelar o número de ocorrências de um evento em um intervalo de tempo ou espaço. A **Distribuição Normal**, por sua vez, é a mais importante em estatística, pois descreve variáveis contínuas e está presente em inúmeros fenômenos naturais e sociais.  
+
+- Em muitos casos, cálculos envolvendo Binomial ou Poisson podem ser complexos quando os parâmetros são grandes. Nesses cenários, torna-se útil aproximar essas distribuições pela **Normal**, simplificando os cálculos e permitindo o uso de tabelas e softwares estatísticos. Essa aproximação é justificada matematicamente e possui grande relevância prática, especialmente em análises de grandes amostras.  
+
+- Neste relatório, serão apresentadas as condições de aproximação da Binomial e da Poisson à Normal, as demonstrações matemáticas que sustentam essa equivalência e exemplos práticos de aplicação utilizando o software **RStudio**.
+
+---
+
+## 🎯 Objetivos
+
+### Objetivo geral
+
+- Compreender como as distribuições **Binomial** e **Poisson** podem ser aproximadas pela **Distribuição Normal**, destacando as condições de validade dessa aproximação e suas aplicações práticas.
+
+### Objetivos específicos
+
+- **Apresentar as demonstrações matemáticas** que justificam a aproximação da Binomial e da Poisson à Normal.  
+- **Aplicar exemplos práticos** com cálculos analíticos e computacionais em R.  
+- **Construir gráficos comparativos** para visualizar a aproximação entre as distribuições.  
+- **Discutir vantagens e limitações** da utilização da Normal como aproximação.  
+- **Relacionar aplicações práticas** em diferentes áreas do conhecimento, mostrando a relevância da aproximação em problemas reais.  
+
+---
+
+## 📚 Fundamentação Teórica
+
+### Distribuição Binomial → Normal
+
+- **Condição de aproximação**: Quando \(n\) é grande e \(p\) não é muito próximo de 0 ou 1.  
+- **Teorema**:  
+  Se \(X \sim Binomial(n,p)\), então para \(n\) grande:  
+  
+
+\[
+  X \approx Normal(\mu = np, \sigma^2 = np(1-p))
+  \]
+
+
+
+- **Exemplo aplicado**:  
+  \(n = 100\), \(p = 0.3\).  
+  Aproximação: \(Normal(\mu = 30, \sigma^2 = 21)\).
+
+```{r}
+n <- 100; p <- 0.3
+x <- 20:40
+binom <- dbinom(x, size=n, prob=p)
+norm <- dnorm(x, mean=n*p, sd=sqrt(n*p*(1-p)))
+plot(x, binom, type="h", lwd=2, col="blue", main="Binomial vs Normal")
+lines(x, norm, col="red", lwd=2)
+legend("topright", legend=c("Binomial", "Normal"), col=c("blue","red"), lwd=2)
+```
+Distribuição Poisson → Normal
+Condição de aproximação: Quando 
+𝜆
+ é grande.
+
+Teorema:
+Se 
+𝑋
+∼
+𝑃
+𝑜
+𝑖
+𝑠
+𝑠
+𝑜
+𝑛
+(
+𝜆
+)
+, então para 
+𝜆
+ grande:
+
+𝑋
+≈
+𝑁
+𝑜
+𝑟
+𝑚
+𝑎
+𝑙
+(
+𝜇
+=
+𝜆
+,
+𝜎
+2
+=
+𝜆
+)
+Exemplo aplicado:
+𝜆
+=
+50
+.
+Aproximação: 
+𝑁
+𝑜
+𝑟
+𝑚
+𝑎
+𝑙
+(
+𝜇
+=
+50
+,
+𝜎
+2
+=
+50
+)
+.
+
+```{r}
+lambda <- 50
+x <- 30:70
+pois <- dpois(x, lambda=lambda)
+norm <- dnorm(x, mean=lambda, sd=sqrt(lambda))
+plot(x, pois, type="h", lwd=2, col="green", main="Poisson vs Normal")
+lines(x, norm, col="red", lwd=2)
+legend("topright", legend=c("Poisson", "Normal"), col=c("green","red"), lwd=2)
+```
+
+## ⚙️ Metodologia
+
+A elaboração deste relatório seguiu uma sequência de etapas que garantem a integração entre teoria, cálculos analíticos e simulações computacionais. O processo metodológico pode ser descrito da seguinte forma:
+
+1. **Revisão conceitual**  
+   - Foram estudadas as propriedades das distribuições Binomial, Poisson e Normal.  
+   - Identificaram-se as condições matemáticas que permitem a aproximação da Binomial e da Poisson pela Normal.  
+
+2. **Definição dos parâmetros**  
+   - Para a Binomial, foram escolhidos valores de \(n\) grandes e \(p\) não extremos, de modo a atender às condições de aproximação.  
+   - Para a Poisson, foram selecionados valores elevados de \(\lambda\), garantindo que a distribuição se aproxime da Normal.  
+
+3. **Demonstrações matemáticas**  
+   - Foram apresentadas as expressões analíticas que justificam a aproximação:  
+     - Binomial \(\sim Normal(np, np(1-p))\)  
+     - Poisson \(\sim Normal(\lambda, \lambda)\)  
+   - Essas demonstrações foram incluídas para fundamentar teoricamente os cálculos.  
+
+4. **Implementação computacional em R**  
+   - Utilizaram-se funções nativas do R (`dbinom`, `dpois`, `dnorm`) para calcular probabilidades e densidades.  
+   - Foram construídos gráficos comparativos entre Binomial vs Normal e Poisson vs Normal, permitindo visualizar a qualidade da aproximação.  
+
+5. **Análise comparativa**  
+   - Os resultados obtidos foram comparados entre os cálculos analíticos e os valores simulados em R.  
+   - Avaliou-se a proximidade das curvas e discutiu-se em quais condições a Normal é uma boa aproximação.  
+
+6. **Interpretação e discussão**  
+   - Os resultados foram interpretados à luz da teoria estatística, destacando vantagens e limitações da aproximação.  
+   - Foram discutidas aplicações práticas em áreas como controle de qualidade, confiabilidade de sistemas e estudos populacionais.  
+
+Essa metodologia assegura que o relatório não apenas apresente cálculos, mas também demonstre a validade teórica e prática da aproximação da Binomial e da Poisson pela Normal.
+---
+
+## 🔍 Resultados e Discussão
+
+Nesta seção são apresentados os resultados obtidos a partir das aproximações da Binomial e da Poisson pela Normal, com cálculos analíticos, simulações em R e interpretações.
+
+### Distribuição Binomial → Normal
+
+- **Resultados numéricos**:  
+  Para \(n=100\) e \(p=0.3\), a Binomial tem média \(\mu = np = 30\) e variância \(\sigma^2 = np(1-p) = 21\).  
+  A Normal aproximada é \(N(30, \sqrt{21})\).  
+
+```{r}
+n <- 100; p <- 0.3
+mean_binom <- n*p
+var_binom <- n*p*(1-p)
+mean_binom; var_binom
+```
+- Discussão:
+O gráfico comparativo mostra que a curva da Normal se ajusta bem à Binomial, especialmente na região central. Pequenas diferenças podem ser observadas nas extremidades, mas a aproximação é válida para cálculos práticos.
+
+###Distribuição Poisson → Normal
+
+- **Resultados numéricos**:
+Para 
+𝜆
+=
+50
+, a Poisson tem média 
+𝜇
+=
+50
+ e variância 
+𝜎
+2
+=
+50
+.
+A Normal aproximada é 
+𝑁
+(
+50
+,
+50
+)
+.
+```{r}
+lambda <- 50
+mean_pois <- lambda
+var_pois <- lambda
+mean_pois; var_pois
+```
+
+- Discussão:
+O gráfico mostra que a Normal se ajusta muito bem à Poisson quando 
+𝜆
+ é grande. A distribuição se torna simétrica e a curva Normal praticamente coincide com a Poisson.
+ 
+###Comparação geral
+- Binomial vs Normal: A aproximação é adequada quando 
+𝑛
+ é grande e 
+𝑝
+ não é extremo.
+
+ - Poisson vs Normal: A aproximação é válida para valores elevados de 
+𝜆
+.
+
+**Interpretação prática**:
+
+- Em problemas de controle de qualidade, a Binomial pode ser aproximada pela Normal para simplificar cálculos de defeitos em grandes lotes.
+
+- Em estudos de ocorrência de eventos raros, como falhas em sistemas, a Poisson pode ser aproximada pela Normal quando a taxa média é alta.
+
+### 💬 Referência bibliográfica
+
+As referências devem ser inseridas no arquivo **referencias.bib** e chamadas no texto da seguinte forma:
+
+- Segundo @Rbasico2022  
+- Tudo é um objeto em R [@Rbasico2022] 
+
+## 🧠 Considerações Finais
+
+O estudo realizado demonstrou que tanto a **Distribuição Binomial** quanto a **Distribuição de Poisson** podem ser aproximadas pela **Distribuição Normal** em condições específicas. Essa aproximação é de grande relevância prática, pois simplifica cálculos de probabilidades e permite o uso de ferramentas estatísticas mais acessíveis, como tabelas da Normal e funções computacionais já consolidadas.
+
+A análise teórica mostrou que:
+- A **Binomial** se aproxima da Normal quando o número de ensaios \(n\) é grande e a probabilidade de sucesso \(p\) não é extrema (nem muito próxima de 0, nem de 1).  
+- A **Poisson** se aproxima da Normal quando o parâmetro \(\lambda\) é elevado, tornando a distribuição mais simétrica.  
+
+Os resultados computacionais em R confirmaram essas condições, evidenciando que as curvas da Normal se ajustam bem às distribuições discretas em cenários de grandes amostras ou altas taxas médias. Essa constatação reforça a importância da Normal como modelo central em estatística, capaz de representar diferentes fenômenos aleatórios.
+
+Do ponto de vista prático, a aproximação é útil em diversas áreas:
+- **Controle de qualidade**: simplificação de cálculos de defeitos em grandes lotes.  
+- **Engenharia de confiabilidade**: análise de falhas em sistemas complexos.  
+- **Ciências sociais e saúde**: estudos populacionais e pesquisas de opinião com grandes amostras.  
+
+Conclui-se que a aproximação da Binomial e da Poisson pela Normal é uma estratégia estatística poderosa, que alia rigor teórico e aplicabilidade prática. Contudo, é essencial respeitar as condições de validade para garantir resultados confiáveis. A integração entre teoria, cálculos analíticos e simulações computacionais reforça a importância dessa técnica como recurso indispensável na análise de dados.
+
+## 📖 Referências

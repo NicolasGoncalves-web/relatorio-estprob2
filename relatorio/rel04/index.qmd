@@ -1,0 +1,227 @@
+---
+# Só mude aqui!!!!
+author: "Nicolas"
+title: "Relatório de Análise das Distribuições Binomial, Poisson e Normal"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: today
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+## 📌 Introdução
+
+A prática realizada tem como objetivo explorar e compreender o papel das distribuições de probabilidade na análise de fenômenos aleatórios, destacando especialmente as distribuições Binomial, Poisson e Normal. Essas distribuições permitem modelar situações em que há variabilidade e incerteza, fornecendo ferramentas matemáticas para estimar probabilidades e apoiar a tomada de decisões fundamentadas.
+
+Em diferentes áreas acadêmicas e profissionais — como engenharia, ciências exatas, saúde e economia — compreender o comportamento de variáveis aleatórias é essencial para interpretar dados e prever resultados.
+
+Neste relatório, serão apresentados exemplos aplicados de cada distribuição, com cálculos realizados de forma analítica e também com auxílio do software R e do pacote leem, reforçando a integração entre teoria e prática e permitindo visualizar os resultados de maneira clara e didática.
+
+## 🎯 Objetivos
+
+### Objetivo geral
+
+
+  Compreender, aplicar e analisar as principais distribuições de probabilidade (Binomial, Poisson, Normal e outras), utilizando cálculos analíticos e ferramentas computacionais (R e pacote leem) para interpretar fenômenos aleatórios, relacionando-os com situações práticas da área de estudo e destacando sua relevância para a tomada de decisões.
+
+### Objetivos específicos
+
+**Coletar dados experimentais** de fenômenos reais ou simulados, a fim de observar a variabilidade natural e fornecer uma base para análise estatística.
+
+**Aplicar estatística descritiva** para organizar, resumir e caracterizar os dados, permitindo identificar padrões e comportamentos iniciais.
+
+**Construir gráficos** representativos das distribuições de probabilidade, facilitando a visualização e a interpretação dos resultados obtidos.
+
+**Calcular probabilidades** de forma analítica e computacional, comparando os resultados teóricos com os obtidos via software, garantindo maior precisão e confiabilidade.
+
+**Interpretar resultados** relacionando-os com aplicações práticas na área de curso, evidenciando como as distribuições podem ser utilizadas em problemas reais.
+
+**Discutir limitações e aplicações** das distribuições estudadas, destacando em quais contextos cada modelo é mais adequado e quais cuidados devem ser tomados em sua utilização.
+
+**Promover integração entre teoria e prática**, reforçando a importância do uso de ferramentas estatísticas para compreender e prever fenômenos aleatórios.
+---
+
+## 📚  Fundamentação Teórica
+
+### Distribuição Binomial
+
+- **Tipo de variável**: discreta (contagem de sucessos em n ensaios).  
+
+- **Exemplo aplicado**: Em uma prova de múltipla escolha, a probabilidade de acertar uma questão é 25%. Qual a probabilidade de acertar exatamente 3 questões em 10 tentativas?  
+
+- **Cálculo analítico**: 
+
+  $$
+  P(X=3) = \binom{10}{3} \cdot (0.25)^3 \cdot (0.75)^7
+  $$  
+- **Cálculo em R**:
+```{r}
+dbinom(3, size = 10, prob = 0.25)
+```
+
+- **Gráficos das Distribuições**
+
+```{r}
+x <- 0:10
+y <- dbinom(x, size = 10, prob = 0.25)
+barplot(y, names.arg = x, main = "Distribuição Binomial (n=10, p=0.25)",
+        xlab = "Número de sucessos", ylab = "Probabilidade", col = "skyblue")
+```
+### Distribuição de Poisson
+
+- **Tipo de variável**: discreta (número de ocorrências em um intervalo).
+
+- **Exemplo aplicado**: Uma máquina apresenta em média 2 falhas por hora. Qual a probabilidade de ocorrerem exatamente 3 falhas em uma hora?
+
+- **Cálculo analítico**:
+$$
+P(X=3) = \frac{e^{-2} \cdot 2^3}{3!}
+$$
+
+- **Cálculo em R**:
+
+```{r}
+dpois(3, lambda = 2)
+```
+
+- **Gráficos das Distribuições**
+
+```{r}
+x <- 0:10
+y <- dpois(x, lambda = 2)
+barplot(y, names.arg = x, main = "Distribuição de Poisson (λ=2)",
+        xlab = "Número de ocorrências", ylab = "Probabilidade", col = "lightgreen")
+```
+
+### Distribuição Normal
+
+- **Tipo de variável**: contínua (valores em torno de uma média).
+
+- **Exemplo aplicado**: A altura de estudantes segue distribuição normal com média de 170 cm e desvio padrão de 10 cm. Qual a probabilidade de um aluno ter altura entre 160 e 180 cm?
+
+- **Cálculo analítico**:
+
+$$
+P(160 \leq X \leq 180) = P\left(\frac{160-170}{10} \leq Z \leq \frac{180-170}{10}\right)
+$$
+
+- **Cálculo em R**:
+
+```{r}
+pnorm(180, mean = 170, sd = 10) - pnorm(160, mean = 170, sd = 10)
+```
+
+- **Gráficos das Distribuições**
+
+```{r}
+x <- seq(140, 200, by = 1)
+y <- dnorm(x, mean = 170, sd = 10)
+plot(x, y, type = "l", main = "Distribuição Normal (μ=170, σ=10)",
+     xlab = "Altura (cm)", ylab = "Densidade", col = "red", lwd = 2)
+```
+
+---
+
+## ⚙️ Metodologia
+
+A prática foi desenvolvida em ambiente computacional utilizando o software **RStudio** e o pacote **leem**, que fornece funções específicas para trabalhar com distribuições de probabilidade.  
+
+Os passos seguidos foram:
+
+1. **Definição das distribuições**: Seleção das distribuições Binomial, Poisson e Normal, destacando o tipo de variável aleatória associada a cada uma.  
+2. **Exemplos aplicados**: Escolha de situações práticas relacionadas à área de estudo para ilustrar cada distribuição.  
+3. **Cálculo analítico**: Desenvolvimento das expressões matemáticas para obtenção das probabilidades.  
+4. **Cálculo computacional**: Implementação dos cálculos no R utilizando funções nativas (`dbinom`, `dpois`, `pnorm`) e o pacote *leem*.  
+5. **Visualização gráfica**: Construção de gráficos representativos das distribuições para facilitar a interpretação dos resultados.  
+6. **Aprofundamento**: Inclusão de quatro distribuições adicionais (Geométrica, Hipergeométrica, Exponencial e Qui-quadrado), com exemplos e cálculos analíticos e computacionais.  
+7. **Comparação e interpretação**: Confronto entre os resultados teóricos e os obtidos via software, discutindo aplicações práticas e limitações de cada modelo.  
+
+Essa metodologia garante a integração entre teoria e prática, permitindo compreender como as distribuições de probabilidade podem ser aplicadas em diferentes contextos acadêmicos e profissionais.
+
+---
+
+## 🔍 Resultados e Discussão
+
+- Nesta seção são apresentados os resultados obtidos a partir dos cálculos analíticos e computacionais das distribuições estudadas.  
+
+### Distribuição Binomial
+
+- **Resultado numérico**: Probabilidade de acertar exatamente 3 questões em 10, com probabilidade de acerto de 25%. 
+
+```{r}
+dbinom(3, size = 10, prob = 0.25)
+```
+- **Discussão**: O valor obtido representa a chance de sucesso em um cenário discreto de tentativas independentes. Observa-se que a probabilidade é relativamente baixa, refletindo a dificuldade do evento.
+
+### Distribuição de Poisson
+
+- **Resultado numérico**: Probabilidade de ocorrerem exatamente 3 falhas em uma hora, com média de 2 falhas.
+
+```{r}
+dpois(3, lambda = 2)
+```
+- **Discussão**: O resultado mostra que, mesmo com média de 2 falhas, há uma probabilidade significativa de ocorrerem 3. Isso evidencia a variabilidade natural dos processos.
+
+### Distribuição Normal
+
+- **Resultado numérico**: Probabilidade de altura entre 160 e 180 cm, média = 170 cm e desvio padrão = 10 cm.
+
+```{r}
+pnorm(180, mean = 170, sd = 10) - pnorm(160, mean = 170, sd = 10)
+```
+
+- **Resultado numérico**: O resultado indica que a maioria dos estudantes se encontra dentro desse intervalo, mostrando a característica de simetria da distribuição normal.
+
+### Comparação dos resultados
+
+- Os cálculos analíticos e computacionais apresentaram valores consistentes, confirmando a validade dos modelos.
+
+- Os gráficos gerados no R reforçam a interpretação, permitindo visualizar a forma das distribuições.
+
+- Observa-se que cada distribuição é adequada para um tipo específico de fenômeno:
+
+**Binomial** → eventos discretos com número fixo de tentativas.
+
+**Poissono** → contagem de ocorrências em intervalos de tempo ou espaço.
+
+**Normal** → variáveis contínuas com comportamento simétrico em torno da média.
+
+### 💬 Exemplo de como citar uma referência bibliográfica
+
+As referências devem ser inseridas no arquivo **referencias.bib** e chamadas no texto da seguinte forma:
+
+- Segundo @Rbasico2022  
+- Tudo é um objeto em R [@Rbasico2022]  
+
+## 🧠 Considerações finais
+
+- O estudo das distribuições de probabilidade permitiu compreender como diferentes modelos estatísticos podem ser aplicados para interpretar fenômenos aleatórios.  
+
+- A utilização de cálculos analíticos e computacionais, por meio do software **RStudio** e do pacote **leem**, possibilitou comparar resultados teóricos com valores obtidos via simulação, garantindo maior precisão e confiabilidade.  
+
+- Observou-se que cada distribuição possui características próprias e aplicações específicas:  
+- **Binomial** → adequada para eventos discretos com número fixo de tentativas.  
+- **Poisson** → útil para contagem de ocorrências em intervalos de tempo ou espaço.  
+- **Normal** → fundamental para variáveis contínuas com comportamento simétrico em torno da média.  
+
+- Além disso, a análise gráfica contribuiu para a visualização dos resultados, facilitando a interpretação e identificação de padrões.  
+
+- Conclui-se que o domínio das distribuições de probabilidade é essencial para a tomada de decisões em diferentes áreas de estudo, reforçando a importância da integração entre teoria e prática no uso de ferramentas estatísticas.  
+
+## 📖 Referências
