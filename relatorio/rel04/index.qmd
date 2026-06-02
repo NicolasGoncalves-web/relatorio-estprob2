@@ -55,6 +55,7 @@ Neste relatório, serão apresentados exemplos aplicados de cada distribuição,
 **Discutir limitações e aplicações** das distribuições estudadas, destacando em quais contextos cada modelo é mais adequado e quais cuidados devem ser tomados em sua utilização.
 
 **Promover integração entre teoria e prática**, reforçando a importância do uso de ferramentas estatísticas para compreender e prever fenômenos aleatórios.
+
 ---
 
 ## 📚  Fundamentação Teórica
@@ -202,7 +203,7 @@ pnorm(180, mean = 170, sd = 10) - pnorm(160, mean = 170, sd = 10)
 
 **Normal** → variáveis contínuas com comportamento simétrico em torno da média.
 
-### 💬 Exemplo de como citar uma referência bibliográfica
+### 💬 Referência bibliográfica
 
 As referências devem ser inseridas no arquivo **referencias.bib** e chamadas no texto da seguinte forma:
 
